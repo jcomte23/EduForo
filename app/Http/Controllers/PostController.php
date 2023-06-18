@@ -12,7 +12,8 @@ class PostController extends Controller
      */
     public function index(Request $request)
     {
-        $posts=$request->user()->unionTblPost;
+        $user_id = auth()->user()->id;
+        $posts=Post::where('user_id', $user_id)->orderBy('updated_at', 'desc')->paginate(10);
         return view('posts.index',compact('posts'));
     }
 
