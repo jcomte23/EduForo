@@ -49,6 +49,8 @@
     "Authentication": "Autenticación",
     "AuthenticationParagraph": "Las vistas de autenticación y registro se incluyen con Laravel Jetstream, así como el soporte para la verificación del correo electrónico del usuario y el restablecimiento de contraseñas olvidadas. Por lo tanto, usted es libre de empezar con lo que más importa: la construcción de su aplicación.",
     "Posted by": "Publicado por",
+    "Posts": "Publicaciones",
+
     "(and :count more error)": "(y :count error más)",
     "(and :count more errors)": "(y :count errores más)",
     "A new verification link has been sent to the email address you provided in your profile settings.": "Se ha enviado un nuevo enlace de verificación a la dirección de correo electrónico que proporcionó en la configuración de su perfil.",
