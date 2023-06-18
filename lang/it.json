@@ -50,6 +50,10 @@
     "AuthenticationParagraph": "Le viste di autenticazione e registrazione sono incluse in Laravel Jetstream, così come il supporto per la verifica dell'e-mail dell'utente e la reimpostazione delle password dimenticate. Quindi, siete liberi di iniziare a fare ciò che più conta: costruire la vostra applicazione.",
     "Posted by": "Inviato da",
     "Posts": "Post",
+    "Date posted":"Data di pubblicazione",
+    "Publication":"Pubblicazione",
+    "Options":"Opzioni",
+    "Edit":"Modificare",
 
     "(and :count more error)": "(e :count altro errore)",
     "(and :count more errors)": "(e :count altri errori)",

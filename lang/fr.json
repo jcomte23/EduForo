@@ -50,6 +50,10 @@
     "AuthenticationParagraph": "Les vues d'authentification et d'enregistrement sont incluses dans Laravel Jetstream, ainsi que la prise en charge de la vérification de l'email de l'utilisateur et de la réinitialisation des mots de passe oubliés. Vous êtes donc libre de commencer ce qui compte le plus : construire votre application.",
     "Posted by": "Affiché par",
     "Posts": "Des postes",
+    "Date posted":"Date postée",
+    "Publication":"Publication",
+    "Options":"Choix",
+    "Edit":"Modifier",
 
     "(and :count more error)": "(et :count erreur en plus)",
     "(and :count more errors)": "(et :count erreurs en plus)",
