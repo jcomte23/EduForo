@@ -39,7 +39,7 @@ class PostControllerTest extends TestCase
             ->actingAs($user)
             ->get('post')
             ->assertStatus(200)
-            ->assertSee('No hay publicaciones creadas');
+            ->assertSee('No publications created');
     }
 
     public function test_method_index_with_data()
@@ -51,7 +51,7 @@ class PostControllerTest extends TestCase
             ->actingAs($user)
             ->get('post')
             ->assertStatus(200)
-            ->assertSee($post->id);
+            ->assertSee($post->message);
     }
 
     public function test_validation_policy_method_show()
