@@ -20,7 +20,6 @@ class Post extends Model
     // public $timestamps = false;
     // protected $guarded = [];
     protected $fillable = [
-        'datePost',
         'message',
     ];
     // protected $hidden = [

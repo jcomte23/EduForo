@@ -117,13 +117,12 @@ class PostControllerTest extends TestCase
             ->actingAs($user)
             ->post('post', [])
             ->assertStatus(302)
-            ->assertSessionHasErrors(['datePost', 'message']);
+            ->assertSessionHasErrors(['message']);
     }
 
     public function test_method_store()
     {
         $data = [
-            'datePost' => $this->faker->date,
             'message' => $this->faker->sentence(),
         ];
 
@@ -143,7 +142,7 @@ class PostControllerTest extends TestCase
             ->actingAs($user)
             ->put("post/{$post->id}", [])
             ->assertStatus(302)
-            ->assertSessionHasErrors(['datePost', 'message']);
+            ->assertSessionHasErrors(['message']);
     }
 
     public function test_validation_policy_method_update()
@@ -151,7 +150,6 @@ class PostControllerTest extends TestCase
         $user = User::factory()->create();
         $post = Post::factory()->create();
         $data = [
-            'datePost' => $this->faker->date,
             'message' => $this->faker->sentence(),
         ];
 
@@ -166,7 +164,6 @@ class PostControllerTest extends TestCase
         $user = User::factory()->create();
         $post = Post::factory()->create(['user_id' => $user->id]);
         $data = [
-            'datePost' => $this->faker->date,
             'message' => $this->faker->sentence(),
         ];
 

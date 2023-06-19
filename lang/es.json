@@ -54,6 +54,9 @@
     "Publication":"Publicación",
     "Options":"Opciones",
     "Edit":"Editar",
+    "No publications created":"Ninguna publicación creada",
+
+
 
     "(and :count more error)": "(y :count error más)",
     "(and :count more errors)": "(y :count errores más)",

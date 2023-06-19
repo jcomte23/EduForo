@@ -54,6 +54,7 @@
     "Publication":"Publication",
     "Options":"Options",
     "Edit":"Edit",
+    "No publications created":"No publications created",
 
     "(and :count more error)": "(and :count more error)",
     "(and :count more errors)": "(and :count more errors)",

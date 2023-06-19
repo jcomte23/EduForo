@@ -12,21 +12,21 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-xl sm:rounded-lg p-4">
                 <table class="min-w-full bg-white border border-gray-200">
-                    <thead>
-                        <tr>
+                    <thead >
+                        <tr class="text-center">
                             <th
-                                class="px-6 py-3 bg-gray-100 text-left text-xs leading-4 font-medium text-gray-600 uppercase tracking-wider">
+                                class="px-6 py-3 bg-gray-100 text-xs leading-4 font-medium text-gray-600 uppercase tracking-wider">
                                 {{ __('Date posted') }}</th>
                             <th
-                                class="px-6 py-3 bg-gray-100 text-left text-xs leading-4 font-medium text-gray-600 uppercase tracking-wider">
+                                class="px-6 py-3 bg-gray-100 text-xs leading-4 font-medium text-gray-600 uppercase tracking-wider">
                                 {{ __('Publication') }}</th>
                             <th class="px-6 py-3 bg-gray-100">{{ __('Options') }}</th>
                         </tr>
                     </thead>
                     <tbody>
                         @forelse ($posts as $post)
-                            <tr>
-                                <td class="border-t px-6 py-4">{{ $post->created_at }}</td>
+                            <tr >
+                                <td class="border-t px-6 py-4">{{ $post->updated_at }}</td>
                                 <td class="border-t px-6 py-4">{{ $post->message }}</td>
                                 <td class="border-t px-6 py-4">
                                     <a href="{{ route('post.edit', $post) }}"
@@ -36,8 +36,10 @@
                                 </td>
                             </tr>
                         @empty
-                            <tr>
-                                <td class="border-t px-6 py-4" colspan="3">No hay publicaciones creadas</td>
+                            <tr class="">
+                                <td class="text-center border-t px-6 py-4"></td>
+                                <td class="text-center border-t px-6 py-4">{{ __('No publications created') }}</td>
+                                <td class="text-center border-t px-6 py-4"></td>
                             </tr>
                         @endforelse
                     </tbody>

@@ -17,7 +17,6 @@ return new class extends Migration
                 ->constrained()
                 ->cascadeOnUpdate()
                 ->cascadeOnDelete();
-            $table->date('datePost');
             $table->text('message');
             $table->timestamps();
         });

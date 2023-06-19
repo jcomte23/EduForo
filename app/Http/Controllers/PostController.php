@@ -10,7 +10,7 @@ class PostController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(Request $request)
+    public function index()
     {
         $user_id = auth()->user()->id;
         $posts=Post::where('user_id', $user_id)->orderBy('updated_at', 'desc')->paginate(10);
@@ -31,7 +31,6 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'datePost' => 'required',
             'message' => 'required'
         ]);
 
@@ -64,7 +63,6 @@ class PostController extends Controller
     public function update(Request $request, Post $post)
     {
         $request->validate([
-            'datePost' => 'required',
             'message' => 'required'
         ]);
 

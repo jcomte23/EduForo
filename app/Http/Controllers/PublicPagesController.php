@@ -9,7 +9,7 @@ class PublicPagesController extends Controller
 {
     public function page_home()
     {
-        $posts = Post::orderBy('datePost', 'desc')->paginate(5);
+        $posts = Post::orderBy('updated_at', 'desc')->paginate(5);
         return view('welcome',compact('posts'));
 
     }
