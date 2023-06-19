@@ -56,6 +56,7 @@
     "Edit":"Modificare",
     "No publications created":"Nessuna pubblicazione creata",
     "Message":"Messaggio",
+    "Are you sure? This action cannot be reversed.":"Ne è sicuro? Questa azione non può essere annullata.",
 
     "(and :count more error)": "(e :count altro errore)",
     "(and :count more errors)": "(e :count altri errori)",

@@ -56,6 +56,7 @@
     "Edit":"Edit",
     "No publications created":"No publications created",
     "Message":"Message",
+    "Are you sure? This action cannot be reversed.":"Are you sure? This action cannot be reversed.",
 
     "(and :count more error)": "(and :count more error)",
     "(and :count more errors)": "(and :count more errors)",

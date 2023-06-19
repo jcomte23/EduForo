@@ -33,8 +33,14 @@
                                 <td class="text-center border-t  w-3/12">
                                     <a href="{{ route('post.edit', $post) }}"
                                         class="inline-block px-4 py-2 text-sm font-medium text-white bg-green-500 hover:bg-green-600 rounded-lg ml-2">{{ __('Edit') }}</a>
-                                    <a href="{{ route('post.destroy', $post) }}"
-                                        class="inline-block px-4 py-2 text-sm font-medium text-white bg-red-600 hover:bg-red-700 rounded-lg ml-2">{{ __('Delete') }}</a>
+
+                                    <form action="{{ route('post.destroy', $post) }}" method="POST" class="inline-block text-sm font-medium text-white">
+                                        @csrf @method('DELETE')
+                                        <x-danger-button class="ml-3 rounded text-white" type="submit"
+                                            onclick="return confirm('{{ __('Are you sure? This action cannot be reversed.') }}')">
+                                            {{ __('Delete') }}
+                                        </x-danger-button>
+                                    </form>
                                 </td>
 
                             </tr>
