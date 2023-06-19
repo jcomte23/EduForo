@@ -1,6 +1,6 @@
 @csrf
 
-<label for="message" class="block font-medium text-sm text-gray-700">{{__('Message')}}
+<label for="message" class="block font-medium text-sm text-gray-700 dark:text-white">{{__('Message')}}
     <span class="text-xs text-red-600">
         @error('message')
             ({{ $message }})
