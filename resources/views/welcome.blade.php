@@ -66,9 +66,7 @@
                         <img src="{{ $post->unionTblUsers->profile_photo_url }}" alt=""
                             class="ml-auto rounded-full">
                     </div>
-
                     <p class="mt-2 text-justify">{{ $post->message }}</p>
-
                     <div class="mt-4 flex items-center">
                         <span> {{ __('Posted by') }} :</span>
                         <span class="ml-2 text-blue-500">{{ $post->unionTblUsers->name }}</span>
@@ -76,7 +74,15 @@
                 </div>
             </div>
         @empty
-            <h1>No hay publicaciones creadas</h1>
+            <div class="mt-6 ml-20 mr-20 px-6 py-4 bg-white sm:rounded-lg dark:bg-gray-800 shadow-md overflow-hidden ">
+                <div class="p-6 border-b border-indigo-600 dark:border-white">
+                    <h1 class="mt-2 text-center">{{ __('No publications created') }}</h1>
+                    <div class="mt-4 flex items-center">
+                        <span> {{ __('Posted by') }} :</span>
+                        <span class="ml-2 text-blue-500">{{ config('app.name', 'Laravel') }}</span>
+                    </div>
+                </div>
+            </div>
         @endforelse
     </div>
     <div class="flex justify-center text-lg py-4">
