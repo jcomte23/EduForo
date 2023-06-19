@@ -9,19 +9,8 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-xl sm:rounded-lg p-4">
                 <form action="{{route('post.update',$post)}}" method="post" class="max-w-mg">
-                    @csrf @method('PUT')
-                    <h1>{{ $post->id }}</h1>
-                    <label for="datePost" class="block font-medium text-sm text-gray-700">Date</label>
-                    <input type="date" class="form-input w-full rounded-md shadow-sm" name="datePost" value="{{ $post->datePost }}">
-
-                    <label for="message" class="block font-medium text-sm text-gray-700">Message</label>
-                    <textarea type="text" class="form-input w-full rounded-md shadow-sm" name="message">
-                        {{ $post->message }}
-                    </textarea>
-
-                    <hr class="my-4">
-
-                    <button type="submit" class="bg-blue-500 text-white font-bold py-2 px-4 rounded-md">Update</button>
+                    @method('PUT')
+                    @include('posts._form')
                 </form>
             </div>
         </div>

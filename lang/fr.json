@@ -55,6 +55,7 @@
     "Options":"Choix",
     "Edit":"Modifier",
     "No publications created":"Aucune publication n'a été créée",
+    "Message":"Message",
 
 
     "(and :count more error)": "(et :count erreur en plus)",
