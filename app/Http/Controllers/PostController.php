@@ -42,18 +42,25 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      */
-    // public function show(Post $post)
-    // {
-    //     $this->authorize('view', $post);
-    //     return view('posts.show',compact('post'));
-    // }
+    public function show(Post $post)
+    {
+        $user_id = auth()->user()->id;
+        if($user_id != $post->user_id){
+            abort(403);
+        }else{
+            return view('posts.show',compact('post'));
+        }
+    }
 
     /**
      * Show the form for editing the specified resource.
      */
     public function edit(Post $post)
     {
-        $this->authorize('view', $post);
+        $user_id = auth()->user()->id;
+        if($user_id != $post->user_id){
+            abort(403);
+        }
         return view('posts.edit',compact('post'));
     }
 
@@ -66,7 +73,9 @@ class PostController extends Controller
             'message' => 'required'
         ]);
 
-        $this->authorize('update', $post);
+        if($request->user()->id != $post->user_id){
+            abort(403);
+        }
 
         $post->update($request->all());
         return redirect()->route('post.index');
@@ -77,7 +86,10 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        $this->authorize('delete', $post);
+        $user_id = auth()->user()->id;
+        if($user_id != $post->user_id){
+            abort(403);
+        }
         $post->delete();
         return redirect()->route('post.index');
     }
