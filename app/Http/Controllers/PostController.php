@@ -14,8 +14,8 @@ class PostController extends Controller
     public function index()
     {
         $user_id = auth()->user()->id;
-        $posts=Post::where('user_id', $user_id)->orderBy('updated_at', 'desc')->paginate(10);
-        return view('posts.index',compact('posts'));
+        $posts = Post::where('user_id', $user_id)->orderBy('updated_at', 'desc')->paginate(10);
+        return view('posts.index', compact('posts'));
     }
 
     /**
@@ -32,7 +32,6 @@ class PostController extends Controller
     public function store(PostRequest $request)
     {
         $request->user()->unionTblPost()->create($request->all());
-
         return redirect()->route('post.index');
     }
 
@@ -41,12 +40,8 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        $user_id = auth()->user()->id;
-        if($user_id != $post->user_id){
-            abort(403);
-        }else{
-            return view('posts.show',compact('post'));
-        }
+        $this->authorize('checkAutorization', $post);
+        return view('posts.show', compact('post'));
     }
 
     /**
@@ -54,11 +49,8 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        $user_id = auth()->user()->id;
-        if($user_id != $post->user_id){
-            abort(403);
-        }
-        return view('posts.edit',compact('post'));
+        $this->authorize('checkAutorization', $post);
+        return view('posts.edit', compact('post'));
     }
 
     /**
@@ -66,10 +58,7 @@ class PostController extends Controller
      */
     public function update(PostRequest $request, Post $post)
     {
-        if($request->user()->id != $post->user_id){
-            abort(403);
-        }
-
+        $this->authorize('checkAutorization', $post);
         $post->update($request->all());
         return redirect()->route('post.index');
     }
@@ -79,10 +68,7 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        $user_id = auth()->user()->id;
-        if($user_id != $post->user_id){
-            abort(403);
-        }
+        $this->authorize('checkAutorization', $post);
         $post->delete();
         return redirect()->route('post.index');
     }
