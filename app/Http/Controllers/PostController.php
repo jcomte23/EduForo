@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Http\Requests\PostRequest;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -28,12 +29,8 @@ class PostController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(PostRequest $request)
     {
-        $request->validate([
-            'message' => 'required'
-        ]);
-
         $request->user()->unionTblPost()->create($request->all());
 
         return redirect()->route('post.index');
@@ -67,12 +64,8 @@ class PostController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Post $post)
+    public function update(PostRequest $request, Post $post)
     {
-        $request->validate([
-            'message' => 'required'
-        ]);
-
         if($request->user()->id != $post->user_id){
             abort(403);
         }
